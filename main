@@ -10,6 +10,7 @@ int main(void)
 {
     int len;
     int len2;
+    int len3, len4;
    /* unsigned int ui;
     void *addr; */
     
@@ -27,7 +28,9 @@ int main(void)
     len2 = printf("Percent:[%%]\n");
     printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
-    _printf("Unknown:[%r]\n");
-    printf("Unknown:[%r]\n");
+    len3 = _printf("Unknown:[%r]\n");
+    len4 = printf("Unknown:[%r]\n");
+    printf("Len:[%d]\n", len3);
+    printf("Len:[%d]\n", len4);
     return (0);
 }

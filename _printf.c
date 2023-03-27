@@ -34,7 +34,10 @@ int _printf(const char *format, ...)
 				}
 			}
 			if (select[j].list == '\0' && format[i + 1] != '\0')
+			{
 				write_char(format[i]);
+				ret++;
+			}
 		}
 		else
 		{
