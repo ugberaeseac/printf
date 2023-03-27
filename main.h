@@ -8,7 +8,7 @@
 * struct data - user-defined data type
 * @list: first member of struct data
 * @fptr: second member of struct data
-* Description: datatype is defined as alias
+* Description: datatype is struct data abbreviation
 */
 
 typedef struct data
