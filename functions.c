@@ -58,3 +58,34 @@ int print_percent(va_list args)
 	return (1);
 }
 
+/**
+* print_integer - prints integers to standard output
+* @args: integer argument passed
+* Return: always 1 SUCCESS
+*/
+int print_integer(va_list args)
+{
+	unsigned int number;
+	int divisor = 1, ret = 0, n;
+
+	n = va_arg(args, int);
+	if (n < 0)
+	{
+		ret += write_char('-');
+		number = (n * -1);
+	}
+	else
+		number = n;
+
+	while ((number/divisor) > 9)
+	{
+		divisor *= 10;
+	}
+	while (divisor != 0)
+	{
+		ret += write_char('0' + (number / divisor));
+		number = number % divisor;
+		divisor = divisor / 10;
+	}
+	return (ret);
+}
