@@ -10,16 +10,13 @@ int _printf(const char *format, ...)
 	va_list args;
 	int i, j;
 	int ret = 0;
+	int f_ret = 0;
 
-	datatype select[] = {{'c', print_char},
-			{'s', print_string},
-			{'%', print_percent},
-			{'\0', NULL}};
+	datatype select[] = {{'c', print_char}, {'s', print_string},
+			{'%', print_percent}, {'\0', NULL}};
 	if (format == NULL)
 		return (-1);
-
 	va_start(args, format);
-
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
@@ -28,7 +25,10 @@ int _printf(const char *format, ...)
 			{
 				if (select[j].list == format[i + 1])
 				{
-					ret += select[j].fptr(args);
+					f_ret = select[j].fptr(args);
+					if (f_ret == -1)
+						return (-1);
+					ret += f_ret;
 					i++;
 					break;
 				}
