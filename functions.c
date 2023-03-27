@@ -77,7 +77,7 @@ int print_integer(va_list args)
 	else
 		number = n;
 
-	while ((number/divisor) > 9)
+	while ((number / divisor) > 9)
 	{
 		divisor *= 10;
 	}
