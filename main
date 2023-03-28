@@ -32,5 +32,6 @@ int main(void)
     len4 = printf("Unknown:[%r]\n");
     printf("Len:[%d]\n", len3);
     printf("Len:[%d]\n", len4);
+    _printf("Unknown:[%b]\n", 20);
     return (0);
 }

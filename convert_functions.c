@@ -10,7 +10,7 @@
 int print_binary(va_list args)
 {
 	unsigned int number;
-	int i, length = 0, ret = 0;
+	int i, length = 0;
 	char *str;
 	char *rev;
 
@@ -25,7 +25,7 @@ int print_binary(va_list args)
 	str = malloc((sizeof(char) * length + 1));
 
 	if (str == NULL)
-		return (NULL);
+		return (-1);
 
 	for (i = 0; number > 0; i++)
 	{
@@ -38,11 +38,11 @@ int print_binary(va_list args)
 	str[i] = '\0';
 	rev = malloc((sizeof(char) * length + 1));
 	if (rev == NULL)
-		return (NULL);
+		return (-1);
 
 	rev = reverse_string(str);
 	for (i = 0; rev[i] != '\0'; i++)
-		write_char(rev);
+		write_char(rev[i]);
 
 	free(rev);
 	free(str);
