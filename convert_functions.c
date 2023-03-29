@@ -56,20 +56,15 @@ return (length);
 */
 int print_unsigned_int(va_list args)
 {
-	int n, number, m;
+	unsigned int number, n;
 	int divisor = 1, ret = 0;
 
-	n = va_arg(args, int);
-	n = (float)(n);
-	m = ceil(n);
+	n = va_arg(args, unsigned int);
 
-	if (n < 0)
+	if (n < 1)
 		return (-1);
-
-	if ((m - n) == 0)
-		number = m;
-	else
-		return (-1);
+	if (n == 0 || n > 1)
+		number = n;
 
 	while ((number / divisor) > 9)
 		divisor *= 10;
