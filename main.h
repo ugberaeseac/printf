@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
+#include <math.h>
 
 /**
 * struct data - user-defined data type
@@ -27,5 +28,6 @@ int print_integer(va_list args);
 int base_length(unsigned int number, unsigned int base);
 char *reverse_string(char *str);
 int print_binary(va_list args);
+int print_unsigned_int(va_list args);
 
 #endif /* #ifndef MAIN_H */
