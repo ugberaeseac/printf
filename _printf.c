@@ -12,7 +12,8 @@ int _printf(const char *format, ...)
 
 	datatype select[] = {{'c', print_char}, {'s', print_string},
 		{'%', print_percent}, {'d', print_integer}, {'i', print_integer},
-		{'b', print_binary}, {'u', print_unsigned_int}, {'\0', NULL}};
+		{'b', print_binary}, {'u', print_unsigned_int}, {'u', print_reverse},
+		{'\0', NULL}};
 	if (format == NULL)
 		return (-1);
 	va_start(args, format);

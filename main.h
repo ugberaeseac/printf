@@ -29,5 +29,8 @@ int base_length(unsigned int number, unsigned int base);
 char *reverse_string(char *str);
 int print_binary(va_list args);
 int print_unsigned_int(va_list args);
+int print_reverse(va_list args);
+
+
 
 #endif /* #ifndef MAIN_H */
