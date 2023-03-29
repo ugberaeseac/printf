@@ -48,3 +48,37 @@ int print_binary(va_list args)
 	free(str);
 return (length);
 }
+
+/**
+* print_unsigned_int - prints only unsigned datatype to standard outpet
+* @args: optional argument to be printed
+* Return: number of characters printed
+*/
+int print_unsigned_int(va_list args)
+{
+	int n, number, m;
+	int divisor = 1, ret = 0;
+
+	n = va_arg(args, int);
+	n = (float)(n);
+	m = ceil(n);
+
+	if (n < 0)
+		return (-1);
+
+	if ((m - n) == 0)
+		number = m;
+	else
+		return (-1);
+
+	while ((number / divisor) > 9)
+		divisor *= 10;
+
+	while (divisor != 0)
+	{
+		ret += write_char('0' + (number / divisor));
+		number = number % divisor;
+		divisor = divisor / 10;
+	}
+	return (ret);
+}
