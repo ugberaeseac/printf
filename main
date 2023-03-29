@@ -34,5 +34,6 @@ int main(void)
     printf("Len:[%d]\n", len4);
     _printf("Unknown:[%b]\n", 20);
     printf("Unsigned int:[%u]\n", 0);
+    _printf("Unknown:[%r]\n", "CHARLES");
     return (0);
 }
