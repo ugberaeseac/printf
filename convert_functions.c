@@ -91,33 +91,21 @@ int print_reverse(va_list args)
 {
 	char *str;
 	char *rev;
-	int i, j;
-	int length = 0;
+	int i;
 
 	str = va_arg(args, char *);
 	if (str == NULL)
 		return (-1);
 
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		length++;
-	}
-
-	rev = malloc(sizeof(char) * (length + 1));
+	rev = reverse_string(str);
 	if (rev == NULL)
 		return (-1);
-
-	i = 0;
-	for (j = (length - 1); j >= 0; j--)
-	{
-		rev[i] = str[j];
-		i++;
-	}
 
 	for (i = 0; rev[i] != '\0'; i++)
 	{
 		write_char(rev[i]);
 	}
 
-	return (length);
+	free(rev);
+	return (i);
 }
